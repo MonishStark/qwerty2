@@ -1,8 +1,7 @@
 version = 1
 
 [[analyzers]]
-name = "javascript"
+name = "python"
 
   [analyzers.meta]
-  plugins = ["react"]
-  environment = ["nodejs"]
+  runtime_version = "3.x.x"
