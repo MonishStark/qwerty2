@@ -20,7 +20,7 @@ const VersionPlayer: React.FC<VersionPlayerProps> = ({ track, version }) => {
 		if (audioRef.current) {
 			const audio = audioRef.current;
 
-			const updateTime = () => {
+			const _updateTime = () => {
 				setCurrentTime(audio.currentTime);
 			};
 

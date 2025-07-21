@@ -146,7 +146,7 @@ const TrackView: React.FC<TrackViewProps> = ({ track, type, version }) => {
 		if (audioRef.current) {
 			const audio = audioRef.current;
 
-			const updateTime = () => {
+			const _updateTime = () => {
 				setCurrentTime(audio.currentTime);
 			};
 

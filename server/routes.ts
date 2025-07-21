@@ -3,10 +3,7 @@
 import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import {
-	processingSettingsSchema,
-	updateAudioTrackSchema,
-} from "@shared/schema";
+import { processingSettingsSchema } from "@shared/schema";
 import multer from "multer";
 import path from "path";
 import fs from "fs";

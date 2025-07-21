@@ -87,7 +87,7 @@ const ProcessingInfo: React.FC<ProcessingInfoProps> = ({
 
 				// Simple state machine to update UI based on current processing stage
 				if (data.status === "processing" || data.status === "regenerate") {
-					const isRegeneration = data.status === "regenerate";
+					const _isRegeneration = data.status === "regenerate";
 					// Simulate progress based on check count as a percentage of expected total
 					const progressIncrement = 100 / (maxChecks * 0.8); // Target 80% of progress through polling
 					const newProgress = Math.min(80, checkCount * progressIncrement);

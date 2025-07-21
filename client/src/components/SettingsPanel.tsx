@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useState } from "react";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { ProcessingSettings } from "@shared/schema";
 
@@ -45,7 +44,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
 		}
 	};
 
-	const incrementOutroLength = () => {
+	const _incrementOutroLength = () => {
 		if (settings.outroLength < 64) {
 			setSettings((prev) => ({
 				...prev,
@@ -54,7 +53,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
 		}
 	};
 
-	const decrementOutroLength = () => {
+	const _decrementOutroLength = () => {
 		if (settings.outroLength > 8) {
 			setSettings((prev) => ({
 				...prev,
@@ -63,14 +62,14 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
 		}
 	};
 
-	const togglePreserveVocals = () => {
+	const _togglePreserveVocals = () => {
 		setSettings((prev) => ({
 			...prev,
 			preserveVocals: !prev.preserveVocals,
 		}));
 	};
 
-	const handleBeatDetectionChange = (
+	const _handleBeatDetectionChange = (
 		e: React.ChangeEvent<HTMLSelectElement>
 	) => {
 		setSettings((prev) => ({

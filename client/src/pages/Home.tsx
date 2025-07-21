@@ -7,7 +7,6 @@ import UploadSection from "@/components/UploadSection";
 import SettingsPanel from "@/components/SettingsPanel";
 import ProcessingInfo from "@/components/ProcessingInfo";
 import TrackPreview from "@/components/TrackPreview";
-import CompletedMixCard from "@/components/CompletedMixCard";
 import { AudioTrack } from "@shared/schema";
 
 const Home: React.FC = () => {
@@ -72,7 +71,7 @@ const Home: React.FC = () => {
 		localStorage.setItem("isProcessing", isProcessing.toString());
 	}, [isProcessing]);
 
-	const { data: tracks } = useQuery<AudioTrack[]>({
+	const { data: _tracks } = useQuery<AudioTrack[]>({
 		queryKey: ["/api/tracks"],
 		staleTime: Infinity,
 		cacheTime: Infinity,
@@ -121,12 +120,12 @@ const Home: React.FC = () => {
 		setIsProcessing(false);
 	};
 
-	const handlePreview = () => {
+	const _handlePreview = () => {
 		// Switch to the extended tab in TrackPreview
 		// This is handled through props
 	};
 
-	const handleAdjust = () => {
+	const _handleAdjust = () => {
 		// Allow user to adjust settings and reprocess
 		setIsProcessed(false);
 	};

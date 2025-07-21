@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import TrackView from "@/components/TrackView";
-import { AudioTrack } from "@shared/schema";
 import { useQuery } from "@tanstack/react-query";
 
 interface TrackPreviewProps {
