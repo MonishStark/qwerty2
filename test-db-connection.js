@@ -11,8 +11,9 @@ console.log(
 );
 
 if (!process.env.DATABASE_URL) {
-	console.error("ERROR: DATABASE_URL environment variable is not defined");
-	process.exit(1);
+	const error = new Error("DATABASE_URL environment variable is not defined");
+	console.error("ERROR:", error.message);
+	throw error;
 }
 
 const pool = new Pool({
@@ -24,9 +25,12 @@ pool
 	.then((result) => {
 		console.log("Database connection successful!");
 		console.log("Current time from database:", result.rows[0].current_time);
-		process.exit(0);
+		// Set exit code for successful completion
+		process.exitCode = 0;
 	})
 	.catch((err) => {
 		console.error("Database connection failed:", err.message);
-		process.exit(1);
+		// Set exit code for error and re-throw the error
+		process.exitCode = 1;
+		throw err;
 	});
